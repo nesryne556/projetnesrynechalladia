@@ -8,19 +8,23 @@
         <li class="list-group-item" >Marque {{materiel.marque}}</li>
         <li class="list-group-item">Prix {{materiel.prix}}</li>
         <li class="list-group-item">Description {{materiel.description}}</li>
-        <li class="list-group-item">Quatité {{materiel.quantite}</li>
+        <li class="list-group-item">Quatité {{materiel.quantite}}</li>
         <li class="list-group-item"><input type="checkbox" [checked]="materiel.hautGamme" /> haut Gamme</li>
-        <li class=""><button (click)="AfficherCom()" class="btn btn-primary">Afficher les Commantaire</button></li>
+        <li class=""><button (click)="AfficherCom()" class="btn btn-primary">Afficher les Commantaires</button></li>
       </ul>
 
 </div>
-
-
-
+<div class="col-6">
+    <ng-container *ngIf="cmntr">
+        <h2>Liste des commentaires</h2>
+        <ng-container *ngFor="let com of materiel.commentaires;index as indice; count as nb">
+            <nes-comment [comment]="com" [index]="i + 1" ></nes-comment>
+        </ng-container>
+    </ng-container>
 </div>
 
 
-
+</div>
 </div>
         
     
