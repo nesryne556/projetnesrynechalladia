@@ -1,9 +1,14 @@
 <h2 class="text-center"> nos produits en informatique </h2>
-<ul>
-    <ng-container *ngFor="let mat of materiels">
-        <li *ngIf="mat.quantite>0">
-       <nes-materiel [m]="mat"></nes-materiel>
-      </li>
-    </ng-container>
-    
-</ul>
+<div class="container">
+<div class="row">
+
+
+        <ng-container *ngFor="let mat of materiels">
+            <div class="col-4" *ngIf="mat.quantite>0">
+           <nes-materiel [m]="mat"></nes-materiel>
+            </div>
+        </ng-container>
+        
+</div>
+
+</div>
